@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect, useState } from "react";
+// import {
+//   allSettledFulfilled,
+//   allSettledFiltering,
+//   promiseAllFulfilled,
+//   promiseAllIfOneFails,
+// } from "./promises";
+// import { sendCorsRequests } from "./cors";
+//import { combineArrays, combineObjects } from "./reduce";
+// import LazyloadedComponent from "./LazyloadedComponent";
+
+const LazyloadedComponent = React.lazy(() => import("./LazyloadedComponent"));
 
 function App() {
+  const [showLazyComponent, setShowLazyComponent] = useState(false);
+
+  useEffect(() => {
+    //allSettledFulfilled();
+    //allSettledFiltering();
+    //promiseAllFulfilled();
+    //promiseAllIfOneFails();
+    //sendCorsRequests();
+    //combineArrays();
+    //combineObjects();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button
+        className="button"
+        onClick={() => setShowLazyComponent((prevValue) => !prevValue)}
+      >
+        Click Me
+      </button>
+      {showLazyComponent && (
+        <React.Suspense fallback="Loading...">
+          <LazyloadedComponent />
+        </React.Suspense>
+      )}
     </div>
   );
 }
