@@ -10,6 +10,7 @@
     "react-dom": "^18.2.0",
     "react-phone-number-input": "^3.2.18",
     "react-scripts": "5.0.1",
+    "sass": "1.58.3",
     "source-map-explorer": "^2.5.3",
     "web-vitals": "^2.1.4"
   },
@@ -20,6 +21,7 @@
     "source-map-analyze": "source-map-explorer 'build/static/js/*.js'",
     "analyze-webpack": "webpack-bundle-analyzer build/bundle-stats.json"
   },
+  "proxy": "http://localhost:9999",
   "eslintConfig": {
     "extends": [
       "react-app",

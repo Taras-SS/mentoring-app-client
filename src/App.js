@@ -5,12 +5,15 @@ import React, { useEffect, useState } from "react";
 //   allSettledFiltering,
 //   promiseAllFulfilled,
 //   promiseAllIfOneFails,
-// } from "./promises";
-// import { sendCorsRequests } from "./cors";
-//import { combineArrays, combineObjects } from "./reduce";
-// import LazyloadedComponent from "./LazyloadedComponent";
+// } from "./lesson-topics/promises";
+// import { sendCorsRequests } from "./lesson-topics/cors";
+//import { combineArrays, combineObjects } from "./lesson-topics/reduce";
+//import LazyloadedComponent from "./components/LazyloadedComponent";
+import CookieButtons from "./components/CookieButtons";
 
-const LazyloadedComponent = React.lazy(() => import("./LazyloadedComponent"));
+const LazyloadedComponent = React.lazy(() =>
+  import("./components/LazyloadedComponent")
+);
 
 function App() {
   const [showLazyComponent, setShowLazyComponent] = useState(false);
@@ -27,7 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <button
+      {/* <button
         className="button"
         onClick={() => setShowLazyComponent((prevValue) => !prevValue)}
       >
@@ -37,7 +40,8 @@ function App() {
         <React.Suspense fallback="Loading...">
           <LazyloadedComponent />
         </React.Suspense>
-      )}
+      )} */}
+      <CookieButtons />
     </div>
   );
 }

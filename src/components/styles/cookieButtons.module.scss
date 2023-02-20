@@ -1,0 +1,23 @@
+.CookieButtons {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  .getCookieBtn {
+    border-radius: 4px;
+    border: 0;
+    color: white;
+    font-size: 20px;
+    padding: 24px 32px;
+    font-weight: bold;
+    background-color: #407be3;
+    display: block;
+    margin-bottom: 40px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+}
